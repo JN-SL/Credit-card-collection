@@ -1,0 +1,78 @@
+@mixin display-flex {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: flex;
+}
+
+@mixin flex($flex) {
+  -webkit-flex: $flex;
+     -moz-flex: $flex;
+      -ms-flex: $flex;
+          flex: $flex;
+}
+
+@mixin justify-content($position) {
+  -webkit-justify-content: $position;
+     -moz-justify-content: $position;
+      -ms-justify-content: $position;
+          justify-content: $position;
+}
+
+@mixin align-items($position) {
+  -webkit-align-items: $position;
+     -moz-align-items: $position;
+      -ms-align-items: $position;
+          align-items: $position;
+}
+
+@mixin flex-flow($dir) {
+  -webkit-flex-flow: $dir;
+     -moz-flex-flow: $dir;
+      -ms-flex-flow: $dir;
+          flex-flow: $dir;
+}
+
+@mixin flex-direction($dir) {
+  -webkit-flex-direction: $dir;
+     -moz-flex-direction: $dir;
+      -ms-flex-direction: $dir;
+          flex-direction: $dir;
+}
+
+@mixin transform($transform) {
+  -webkit-transform: $transform;
+     -moz-transform: $transform;
+      -ms-transform: $transform;
+          transform: $transform;
+}
+
+@mixin appearance($prop) {
+  -webkit-appearance: $prop;
+     -moz-appearance: $prop;
+      -ms-appearance: $prop;
+          appearance: $prop;
+}
+
+@mixin placeholder($color: inherit, $opacity: 1, $visibility: visible) {
+  &::-webkit-input-placeholder {
+    color: $color;
+    opacity: $opacity;
+    visibility: $visibility;
+  }
+  &::-moz-placeholder {
+    color: $color;
+    opacity: $opacity;
+    visibility: $visibility;
+  }
+  &:-ms-input-placeholder {
+    color: $color;
+    opacity: $opacity;
+    visibility: $visibility;
+  }
+  &:-moz-placeholder {
+    color: $color;
+    opacity: $opacity;
+    visibility: $visibility;
+  }
+}
