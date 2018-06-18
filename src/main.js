@@ -3,11 +3,6 @@
 import Vue from 'vue'
 import App from './App'
 
-// import fonts
-import './assets/fonts/Courier/courier.css'
-import './assets/fonts/HelveticaNeue/HelveticaNeue.css'
-import './assets/fonts/OCRAExtended/OCRAExtended.css'
-
 // import components
 import creditCard from './components/credit-card'
 

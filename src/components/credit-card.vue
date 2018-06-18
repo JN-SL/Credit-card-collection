@@ -1,16 +1,14 @@
 <template>
 <div class="credit-card-component">
   <div class="card-container">
+    <input-fields />
+
     <img src="../assets/images/Chip.svg" class="img-chip" />
 
-    <div class="block-color-icons">
-      <img src="../assets/images/color_icon_inactive.svg" class="color-icon iInactive" />
-      <img src="../assets/images/color_icon_active.svg" class="color-icon iActive" />
-      <img src="../assets/images/close_icon.svg" class="close_icon" />
+    <div class="block-color-icons" @click="isColorPaletteOpened = !isColorPaletteOpened">
+      <img :src="colorIconImgUrl" class="color-icon" />
       <label class="icon_label">Edit Color</label>
     </div>
-
-    <input-fields />
   </div>
 
 </div>
@@ -22,8 +20,22 @@ import inputFields from './input-fields'
 export default {
   name: 'credit-card',
 
+  data () {
+    return {
+      isColorPaletteOpened: false
+    }
+  },
+
   components: {
     'input-fields': inputFields
+  },
+
+  computed: {
+    colorIconImgUrl () {
+      return this.isColorPaletteOpened
+        ? require('../assets/images/close_icon.svg')
+        : require('../assets/images/color_icon_active.svg')
+    }
   }
 }
 </script>
@@ -48,7 +60,7 @@ export default {
   width: 100%;
   height: 100%;
 
-  background: #bdbdbd;
+  background: #F9F8F8;
 
   border-radius: 1.9rem;
   box-shadow: 0 0.9rem 1.9rem 0 rgba(78, 78, 78, 0.24),
@@ -84,23 +96,12 @@ export default {
 
     transition: 0.7s;
 
-    &.iInactive {
-      opacity: 1;
+    filter: $z-depth-1;
 
-      filter: $z-depth-1;
-    }
-    &.iActive {
-      opacity: 0;
-      filter: z-depth-3;
-    }
+    transition: 0.7s;
 
     &:hover {
-      &.iInactive {
-        opacity: 0;
-      }
-      &.iActive {
-        opacity: 1;
-      }
+      filter: $z-depth-3;
     }
   }
 
@@ -118,21 +119,6 @@ export default {
 
     @media (min-width: 57em) {
       top: 4.6rem;
-    }
-  }
-
-  .close_icon {
-    position: absolute;
-    width: 100%;
-
-    cursor: pointer;
-
-    filter: $z-depth-1;
-
-    transition: 0.7s;
-
-    &:hover {
-      filter: $z-depth-3;
     }
   }
 }
