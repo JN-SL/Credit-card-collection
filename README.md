@@ -1,4 +1,4 @@
-# credit-card-collection (updating)
+# credit-card-collection
 
 > A customizable credit card that allows users to input the card information and select the themes
 
