@@ -1,5 +1,5 @@
 <template>
-<div class="input-fields-component">
+<form class="input-fields-component">
 
   <div class="block-card-number">
     <input
@@ -68,7 +68,7 @@
       @keydown="keydownEvent($event, 7)"
       @input="inputEvent($event, 7, 'number')" />
   </div>
-</div>
+</form>
 </template>
 
 <script>
@@ -198,13 +198,13 @@ input {
   margin: 0;
 
   // placeholder color before clicked
-  @include placeholder(inherit, 0.5);
+  &:empty {
+    @include placeholder(inherit, 0.5);
+  }
 
   &:focus {
     outline: none;
     border: none;
-
-    @include placeholder(inherit, 1, hidden);
   }
 
   &[type="number"]::-webkit-inner-spin-button {
